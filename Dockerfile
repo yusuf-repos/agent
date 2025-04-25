@@ -137,15 +137,15 @@ USER agent
 ######################################
 # By default the app runs on port 80
 
-EXPOSE 80
+EXPOSE 8000
 
 ######################################
 # Check if agent is still running
 
-HEALTHCHECK CMD curl --fail http://localhost:80 || exit 1   
+HEALTHCHECK CMD curl --fail http://localhost:8000 || exit 1
 
 ###################################################
 # Leeeeettttt'ssss goooooo!!!
 # Run the shizzle from the right working directory.
 WORKDIR /home/agent
-CMD ["./main", "-action", "run", "-port", "80"]
+CMD ["./main", "-action", "run", "-port", "8000"]
